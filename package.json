@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "name": "selenidejs-tasks",
+  "name": "todomvc-tests",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
