@@ -9,7 +9,7 @@ test('todo is mark as completed', async () => {
   await browser.element('//*[contains(@id, "new-todo")]').type('b').then(command.pressEnter)
   await browser.element('//*[contains(@id, "new-todo")]').type('c').then(command.pressEnter)
 
-  await browser.all('//*[contains(concat(" ", @id, " "), " todo-list ")]/li').should(have.exactTexts('a', 'b', 'c'))
+  await browser.all('//*[contains(@id, "todo-list")]/li').should(have.exactTexts('a', 'b', 'c'))
 
   // WHEN
   await browser.element('//*[.="b"]/..//*[contains(concat(" ", normalize-space(@class), " "), " toggle ")]').click()
