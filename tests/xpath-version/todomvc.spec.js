@@ -20,5 +20,7 @@ test('todo is mark as completed', async () => {
   await browser
     .all('//*[@id="todo-list"]/li[not(contains(concat(" ", normalize-space(@class), " "), " completed "))]')
     .should(have.exactTexts('a', 'c'))
-  await browser.all('//*[@id="todo-list"]/li').should(have.texts('a', 'b', 'c'))
+  await browser
+    .all('//*[@id="todo-list"]/li')
+    .should(have.texts('a', 'b', 'c'))
 })
