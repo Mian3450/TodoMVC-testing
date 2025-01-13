@@ -113,3 +113,6 @@ test-results/
 
 # Playwright traces
 traces/
+
+# Prettier
+.prettierrc
