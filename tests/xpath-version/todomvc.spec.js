@@ -11,16 +11,16 @@ test('todo is mark as completed', async () => {
   // WHEN
   await browser.element(
       '//*[@id="todo-list"]/li[.//text()="b"]//*[contains(concat(" ", normalize-space(@class), " "), " toggle ")]'
-    ).click()
+  ).click()
 
   // THEN
   await browser.all(
     '//*[@id="todo-list"]/li[contains(concat(" ", normalize-space(@class), " "), " completed ")]'
-    ).should(have.exactTexts('b'))
+  ).should(have.exactTexts('b'))
   await browser.all(
     '//*[@id="todo-list"]/li[not(contains(concat(" ", normalize-space(@class), " "), " completed "))]'
-    ).should(have.exactTexts('a', 'c'))
+  ).should(have.exactTexts('a', 'c'))
   await browser.all(
     '//*[@id="todo-list"]/li'
-    ).should(have.texts('a', 'b', 'c'))
+  ).should(have.texts('a', 'b', 'c'))
 })
