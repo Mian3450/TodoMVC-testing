@@ -1,6 +1,6 @@
 import { browser, have, command } from 'selenidejs'
 import { test } from '@jest/globals'
-import xPath from '../../support/xPath.js'
+import xpath from '../../support/xPath.js'
 
 test('todo is mark as completed', async () => {
   // GIVEN
@@ -11,15 +11,15 @@ test('todo is mark as completed', async () => {
 
   // WHEN
   await browser.element(
-      `//*[@id="todo-list"]/li[.//text()="b"]//*[${xPath.getClass('toggle')}]`
+      `//*[@id="todo-list"]/li[.//text()="b"]//*[${xpath.hasClass('toggle')}]`
   ).click()
 
   // THEN
   await browser.all(
-    `//*[@id="todo-list"]/li[${xPath.getClass('completed')}]`
+    `//*[@id="todo-list"]/li[${xpath.hasClass('completed')}]`
   ).should(have.exactTexts('b'))
   await browser.all(
-    `//*[@id="todo-list"]/li[not(${xPath.getClass('completed')})]`
+    `//*[@id="todo-list"]/li[not(${xpath.hasClass('completed')})]`
   ).should(have.exactTexts('a', 'c'))
   await browser.all(
     `//*[@id="todo-list"]/li`

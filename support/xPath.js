@@ -1,9 +1,7 @@
-// support/xPath.js
-
-const xPath = {
-  getClass(classForXPath) {
-    return `contains(concat(" ", normalize-space(@class), " "), " ${classForXPath} ")`
+const xpath = {
+  hasClass(value) {
+    return `contains(concat(" ", normalize-space(@class), " "), " ${value} ")`
   },
 }
 
-export default xPath
+export default xpath
