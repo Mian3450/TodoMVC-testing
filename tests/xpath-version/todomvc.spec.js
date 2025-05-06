@@ -1,6 +1,6 @@
 import { browser, have, command } from 'selenidejs'
 import { test } from '@jest/globals'
-import * as xpath from '../../support/xPath.js'
+import * as xpath from '../../lib/xpath.js'
 
 test('todo is mark as completed', async () => {
   // GIVEN
@@ -11,7 +11,7 @@ test('todo is mark as completed', async () => {
 
   // WHEN
   await browser.element(
-      `//*[@id="todo-list"]/li[.//text()="b"]//*${xpath.filterBy.cssClass('toggle')}`
+    `//*[@id="todo-list"]/li[.//text()="b"]//*${xpath.filterBy.cssClass('toggle')}`
   ).click()
 
   // THEN
