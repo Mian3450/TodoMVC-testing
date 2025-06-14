@@ -20,11 +20,9 @@ test('todo is mark as completed', async () => {
   await browser.all(
     x.all().by(its.id('todo-list')).child('li').by(its.cssClass('completed')).x
   ).should(have.exactTexts('b'))
-
   await browser.all(
     x.all().by(its.id('todo-list')).child('li').by(`not(${its.cssClass('completed')})`).x
   ).should(have.exactTexts('a', 'c'))
-
   await browser.all(
     x.all().by(its.id('todo-list')).child('li').x
   ).should(have.texts('a', 'b', 'c'))
